@@ -5,6 +5,9 @@ public class FlightDto {
     private float latitude;
     private float longitude;
 
+    public FlightDto() {
+    }
+
     public FlightDto(String id, float latitude, float longitude) {
         this.id = id;
         this.latitude = latitude;

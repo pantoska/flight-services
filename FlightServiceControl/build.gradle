@@ -28,5 +28,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.data:spring-data-mongodb:2.0.8.RELEASE')
+	compile('org.modelmapper:modelmapper:0.7.4')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

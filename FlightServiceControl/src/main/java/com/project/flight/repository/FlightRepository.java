@@ -1,4 +1,4 @@
-package com.project.flight.repositor;
+package com.project.flight.repository;
 
 import com.project.flight.entity.FlightEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -1,12 +1,13 @@
 package com.project.flight.controller;
 
+import com.project.flight.dto.FlightDto;
 import com.project.flight.entity.FlightEntity;
 import com.project.flight.service.FlightService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -14,10 +15,12 @@ import java.util.Optional;
 public class FlightsController {
 
     private FlightService flightService;
+    private ModelMapper modelMapper;
 
     @Autowired
-    public FlightsController(FlightService flightService) {
+    public FlightsController(FlightService flightService, ModelMapper modelMapper) {
         this.flightService = flightService;
+        this.modelMapper = modelMapper;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/flights/{id}")
@@ -28,8 +31,11 @@ public class FlightsController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/flights/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateFlight(@RequestBody FlightEntity flight) {
-        flightService.updateFlight(flight);
+    public void updateFlight(@PathVariable String id, @RequestBody FlightDto flight) {
+        System.out.println(flight.toString());
+        FlightEntity entity = convertToEntity(flight);
+        entity.setId(id);
+        flightService.updateFlight(entity);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/flights/{id}")
@@ -42,6 +48,11 @@ public class FlightsController {
     @ResponseStatus(HttpStatus.CREATED)
     public void addFlight(@RequestBody FlightEntity flight) {
         flightService.saveFlight(flight);
+    }
+
+    private FlightEntity convertToEntity(FlightDto flightDto){
+        FlightEntity entity = modelMapper.map(flightDto, FlightEntity.class);
+        return entity;
     }
 
 }
