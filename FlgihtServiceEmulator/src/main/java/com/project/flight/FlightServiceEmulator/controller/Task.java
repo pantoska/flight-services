@@ -48,8 +48,8 @@ public class Task implements Runnable{
 
     private PositionDto updatePosition() {
         PositionDto positionDto = new PositionDto();
-        positionDto.setLatitude(r.nextInt());
-        positionDto.setLongitude(r.nextInt());
+        positionDto.setLatitude(r.nextFloat());
+        positionDto.setLongitude(r.nextFloat());
         return positionDto;
     }
 

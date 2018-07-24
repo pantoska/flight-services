@@ -33,19 +33,10 @@ public class TaskScheduler {
         tasks.remove(id);
     }
 
-    @Scheduled(fixedRate = 1500)
+    @Scheduled(fixedRate = 1000)
     public void update() {
         for(Task task : tasks.values()) {
             ScheduledFuture<?> result = scheduler.schedule(task, 2, TimeUnit.SECONDS);
-            try {
-                if(result.get() != HttpStatus.OK) {
-                    stopTask(task.getId());
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
         }
     }
 
