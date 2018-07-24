@@ -23,11 +23,11 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.slf4j:slf4j-simple:1.7.5')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.projectlombok:lombok:1.16.10')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
