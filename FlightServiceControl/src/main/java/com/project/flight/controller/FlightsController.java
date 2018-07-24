@@ -38,5 +38,10 @@ public class FlightsController {
         flightService.deleteFlight(id);
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/flights")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addFlight(@RequestBody FlightEntity flight) {
+        flightService.saveFlight(flight);
+    }
 
 }

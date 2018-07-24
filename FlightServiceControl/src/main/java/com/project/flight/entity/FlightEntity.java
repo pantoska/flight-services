@@ -3,7 +3,7 @@ package com.project.flight.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Flight")
+@Document(collection = "FlightPosition")
 public class FlightEntity {
     @Id
     private String id;

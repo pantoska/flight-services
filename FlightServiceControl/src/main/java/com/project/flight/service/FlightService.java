@@ -28,16 +28,15 @@ public class FlightService {
     }
 
     public void updateFlight(FlightEntity flight) {
-        //TODO Service Manager przechowywuje id lotow, ty powinnas tutaj z kim sie komunikowac i sprawdzic
-        //TODO czy istnieje w jego bazie taki lot jesli tak to update, jesli nie to zwraca taki status
-        //TODO zeby Service Emulator nie robil update lotow o tej id
-        //TODO wazne: musisz znac PORT flightServiceManager
         flightRepository.save(flight);
     }
 
-
     public void deleteFlight(@PathVariable String id) {
         flightRepository.deleteById(id);
+    }
+
+    public void saveFlight(FlightEntity flight) {
+        flightRepository.save(flight);
     }
 
 }
