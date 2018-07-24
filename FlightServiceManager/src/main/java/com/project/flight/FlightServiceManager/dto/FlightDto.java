@@ -35,12 +35,4 @@ public class FlightDto {
         this.to = to;
     }
 
-    @Override
-    public String toString() {
-        return "FlightDto{" +
-                "id='" + id + '\'' +
-                ", from=" + from +
-                ", to=" + to +
-                '}';
-    }
 }

@@ -20,7 +20,7 @@ public class FlightsController {
     }
 
     @RequestMapping(method= RequestMethod.GET, value = "/flights")
-    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
     public List<FlightEntity> getAllFlights() {
         return flightService.getAllFlights();
     }
