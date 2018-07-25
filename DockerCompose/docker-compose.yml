@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4.0.0
+    container_name: mongo
+    hostname: mongo
+    network_mode: host
+
