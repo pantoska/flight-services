@@ -1,6 +1,7 @@
 package com.project.flight.service;
 
 import com.project.flight.entity.FlightEntity;
+import com.project.flight.error.NotFoundException;
 import com.project.flight.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +18,12 @@ public class FlightService {
         this.flightRepository = flightRepository;
     }
 
-    public Optional<FlightEntity> getFlight(String id) {
-        return flightRepository.findById(id);
+    public FlightEntity getFlight(String id) {
+        return flightRepository.findById(id).orElseThrow(() -> new NotFoundException("Entity with id:" + id + "not exists."));
     }
 
     public void updateFlight(FlightEntity flight) {
+        flightRepository.findById(flight.getId()).orElseThrow(() -> new NotFoundException("Not found ID"));
         flightRepository.save(flight);
     }
 

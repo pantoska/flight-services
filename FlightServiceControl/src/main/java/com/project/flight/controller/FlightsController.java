@@ -25,7 +25,7 @@ public class FlightsController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/flights/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<FlightEntity> getFlight(@PathVariable String id) {
+    public FlightEntity getFlight(@PathVariable String id) {
         return flightService.getFlight(id);
     }
 
