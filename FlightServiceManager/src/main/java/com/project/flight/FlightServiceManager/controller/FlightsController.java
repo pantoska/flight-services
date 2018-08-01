@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api")
 public class FlightsController {
@@ -23,6 +24,12 @@ public class FlightsController {
     @ResponseStatus(HttpStatus.OK)
     public List<FlightEntity> getAllFlights() {
         return flightService.getAllFlights();
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/flights/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteFlight(@PathVariable String id) {
+        flightService.deleteFlight(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/flights")

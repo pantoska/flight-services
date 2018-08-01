@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.ResourceAccessException;
@@ -41,5 +42,9 @@ public class FlightService {
         FlightControllerDto flightControllerDto = new FlightControllerDto(flight.getId());
         HttpEntity<FlightControllerDto> entity = new HttpEntity<>(flightControllerDto, headers);
         ResponseEntity<String> responseEntity = restTemplate.exchange(POSITION_URI, HttpMethod.POST, entity, String.class);
+    }
+
+    public void deleteFlight(@PathVariable String id) {
+        flightRepository.deleteById(id);
     }
 }
