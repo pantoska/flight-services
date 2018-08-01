@@ -1,0 +1,12 @@
+p {
+    background-color: rgb(212, 204, 204);
+    cursor: pointer;
+    padding: 14px 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+

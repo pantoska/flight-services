@@ -1,0 +1,36 @@
+.HeaderDescription {
+    background-color: rgb(226, 120, 120);
+    color: white;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 20px;
+}
+
+div.a {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(112, 13, 13);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(190, 81, 81);
+}

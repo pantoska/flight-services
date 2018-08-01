@@ -1,0 +1,21 @@
+.FlightDescription {
+    background-color: rgb(197, 189, 189);
+    color: black;
+    outline: none;
+    cursor: pointer;
+    padding: 40px 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+th {
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 15px;
+    text-align: center;
+    background-color: rgb(197, 189, 189);
+}
+
