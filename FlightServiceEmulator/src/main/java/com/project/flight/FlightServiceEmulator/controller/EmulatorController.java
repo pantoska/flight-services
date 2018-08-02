@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @Slf4j
+@CrossOrigin
 @RestController
 @RequestMapping("/api/flights")
 public class EmulatorController {
